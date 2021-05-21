@@ -29,3 +29,29 @@ def preOrderTraversal(rootNode):
 
 
 preOrderTraversal(linkedlistBT)
+
+print('-----------------------------------------------')
+
+
+def inOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    inOrderTraversal(rootNode.leftChild)
+    print(rootNode.data)
+    inOrderTraversal(rootNode.rightChild)
+
+
+inOrderTraversal(linkedlistBT)
+
+print('-----------------------------------------------')
+
+
+def postOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    postOrderTraversal(rootNode.leftChild)
+    postOrderTraversal(rootNode.rightChild)
+    print(rootNode.data)
+
+
+postOrderTraversal(linkedlistBT)
