@@ -42,11 +42,25 @@ class SinglyLinkedList:
                 if target == self.tail:
                     self.tail = node
 
+    # time complexity ==> o(n)
+    # space complexity ==> 0(1)
+    def traverse(self):
+        node = self.head
+        if node is None:
+            return
+        while node is not None:
+            print(node.value)
+            node = node.next
+
 
 sll = SinglyLinkedList()
-sll.insert(1, 0)
-sll.insert(2, 0)
+sll.insert(1, 1)
+sll.insert(2, -1)
 sll.insert(3, -1)
-sll.insert(4, 2)
+sll.insert(4, -1)
+sll.insert(0, 0)
+sll.insert('g', 3)
+
+sll.traverse()
 
 print([node.value for node in sll])
