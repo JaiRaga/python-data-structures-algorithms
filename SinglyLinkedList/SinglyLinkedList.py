@@ -100,6 +100,9 @@ class SinglyLinkedList:
                 nextNode = temp.next
                 temp.next = nextNode.next
 
+    # Deletes the entire SLL
+    # time complexity ==> o(1)
+    # space complexity ==> o(1)
     def deleteSLL(self):
         if self.head is None:
             print('SLL is empty.')
