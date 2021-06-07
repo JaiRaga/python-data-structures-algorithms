@@ -52,6 +52,19 @@ class SinglyLinkedList:
             print(node.value)
             node = node.next
 
+    # time complexity ==> o(n)
+    # space complexity ==> o(1)
+    def search(self, value):
+        if self.head is None:
+            return 'The linked list is empty.'
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == value:
+                    return node.value
+                node = node.next
+            return 'The value does not exist in the sll.'
+
 
 sll = SinglyLinkedList()
 sll.insert(1, 1)
@@ -62,5 +75,7 @@ sll.insert(0, 0)
 sll.insert('g', 3)
 
 sll.traverse()
+
+print(sll.search(3))
 
 print([node.value for node in sll])
