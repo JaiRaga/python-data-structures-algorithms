@@ -56,7 +56,7 @@ class SinglyLinkedList:
     # space complexity ==> o(1)
     def search(self, value):
         if self.head is None:
-            return 'The linked list is empty.'
+            print('The linked list is empty.')
         else:
             node = self.head
             while node is not None:
@@ -70,7 +70,7 @@ class SinglyLinkedList:
     # space complexity ==> o(1)
     def delete(self, index):
         if self.head is None:
-            return 'SLL is empty.'
+            print('SLL is empty.')
         else:
             if index == 0:
                 if self.head == self.tail:
@@ -100,6 +100,13 @@ class SinglyLinkedList:
                 nextNode = temp.next
                 temp.next = nextNode.next
 
+    def deleteSLL(self):
+        if self.head is None:
+            print('SLL is empty.')
+        else:
+            self.head = None
+            self.tail = None
+
 
 sll = SinglyLinkedList()
 sll.insert(1, 1)
@@ -111,8 +118,9 @@ sll.insert('g', 3)
 
 sll.traverse()
 
-print(sll.search(3))
+sll.search(3)
 
 print([node.value for node in sll])
 sll.delete(3)
+sll.deleteSLL()
 print([node.value for node in sll])
