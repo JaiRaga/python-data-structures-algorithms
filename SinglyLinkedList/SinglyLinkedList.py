@@ -65,6 +65,41 @@ class SinglyLinkedList:
                 node = node.next
             return 'The value does not exist in the sll.'
 
+    # Deletes a node
+    # time complexity ==> o(n)
+    # space complexity ==> o(1)
+    def delete(self, index):
+        if self.head is None:
+            return 'SLL is empty.'
+        else:
+            if index == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+            elif index == -1:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    while node is not None:
+                        if node.next == self.tail:
+                            break
+                        node = node.next
+                    node.next = None
+                    self.tail = node
+            else:
+                temp = self.head
+                ind = 0
+
+                while ind < index - 1:
+                    temp = temp.next
+                    ind += 1
+                nextNode = temp.next
+                temp.next = nextNode.next
+
 
 sll = SinglyLinkedList()
 sll.insert(1, 1)
@@ -78,4 +113,6 @@ sll.traverse()
 
 print(sll.search(3))
 
+print([node.value for node in sll])
+sll.delete(3)
 print([node.value for node in sll])
